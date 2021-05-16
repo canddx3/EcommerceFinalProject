@@ -10,10 +10,13 @@ export class ProductlistComponent implements OnInit {
   products : any[] = [];
   constructor(private productsService: ProductsService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.productsService.fetchProducts();
     this.productsService.getProducts().subscribe(data => {
       this.products = [...data];
     });
+  }
+  addItemToCart(item: { id: any; }) {
+    this.productsService.addToCart(item.id);
   }
 }

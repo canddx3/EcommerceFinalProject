@@ -1,3 +1,4 @@
+import { ProductsService } from '../services/products.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./appnav.component.css']
 })
 export class AppnavComponent implements OnInit {
+  cart : any[] = [];
+  constructor(private productServcie: ProductsService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    this.productServcie.getCart().subscribe(data => {
+      this.cart = [ ...data];
+    });
   }
-
 }
