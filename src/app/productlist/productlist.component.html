@@ -24,7 +24,7 @@
             <p class="card-text">{{ item.description }}</p>
             <div class="d-flex justify-content-between align-items-center">
               <h2 class="card-text">{{ item.price | currency }}</h2>
-              <button type="button" class="btn" (click)="addItemToCart(item)">
+              <button type="button" class="btn" (click)="addItemToCart(item)" [class.btn-outline-primary]="itemInCart(item).length">
                 <i class="fa fa-shopping-cart"></i>
               </button>
             </div>

@@ -19,4 +19,8 @@ export class ProductlistComponent implements OnInit {
   addItemToCart(item: { id: any; }) {
     this.productsService.addToCart(item.id);
   }
+
+  itemInCart(item: { id: any; }) {
+    return this.productsService.findItemInCart(item.id);
+  }
 }
