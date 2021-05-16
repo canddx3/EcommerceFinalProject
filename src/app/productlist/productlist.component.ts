@@ -16,11 +16,11 @@ export class ProductlistComponent implements OnInit {
       this.products = [...data];
     });
   }
-  addItemToCart(item: { id: any; }) {
-    this.productsService.addToCart(item.id);
+  addItemToCart(item: { _id: any; }) {
+    this.productsService.addToCart(item._id);
   }
 
-  itemInCart(item: { id: any; }) {
-    return this.productsService.findItemInCart(item.id);
+  itemInCart(item: { _id: any; }) {
+    return this.productsService.findItemInCart(item._id);
   }
 }

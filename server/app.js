@@ -5,6 +5,7 @@ const app           = express();
 const mongoose      = require('mongoose');
 const config        = require('./config');
 const Product       = require('./models/product');
+const Order        = require('./models/order');
 
 // setting up database
 mongoose.Promise = global.Promise;
@@ -25,6 +26,24 @@ app.get('/api/products', (req, res) => {
       res.status(200).json([]);
     }
   })
+})
+
+app.post('/api/checkout', (req, res) => {
+  const newOrder = new Order({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    address: req.body.address,
+    state: req.body.state,
+    country: req.body.country,
+    zip: req.body.zip,
+    items: req.body.items.map(item => item._id) || []
+  })
+  newOrder.save().then(rec => {
+    res.status(200).json(rec)
+  }, (err) => {
+    res.status(500).json({error: 'error'})
+  });
 })
 
 app.get('*', (req, res) => {

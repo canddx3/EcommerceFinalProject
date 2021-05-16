@@ -53,14 +53,22 @@ export class ProductsService {
     this.cartSub.next([...this.cart]);
   }
 
+  clearFromCart() {
+    this.cartSub.next([]);
+  }
+
   findItemInCart(id: any) {
-    const item = this.cart.filter(products => products.id === id);
+    const item = this.cart.filter(products => products._id === id);
     return item;
   }
 
   findItemInProducts(id: any) {
-    const item = this.products.filter(product => product.id === id);
+    const item = this.products.filter(product => product._id === id);
     return item;
+  }
+
+  checkout(data: any) {
+    return this.http.post('/api/checkout', data)
   }
 }
 
