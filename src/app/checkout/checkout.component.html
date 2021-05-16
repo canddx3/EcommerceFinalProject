@@ -8,7 +8,7 @@
     <div class='col-md-4 order-md-2 mb-4'>
       <h4 class='d-flex justify-content-between align-items-center mb-3'>
         <span class='text-muted'>Your Cart</span>
-        <span class="badge badge-secondary badge-pill">2</span>
+        <span class="badge badge-secondary badge-pill">{{ cart.length }}</span>
       </h4>
       <ul class="list-group mb-3">
         <li class="list-group-item d-flex justify-content-between lh-condensed" *ngFor="let item of cart">
@@ -51,15 +51,6 @@
         <input type="address"  class="form-control" id="address" placeholder="1234 Main st" formControlName="address">
         <div class="invalid-feedback">Please enter your shipping address.</div>
       </div>
-      <div class="row">
-        <div class="col-md-5 mb-3">
-          <label for="country">Country</label>
-          <select class="custom-select d-block w-100" id="country" required="" formControlName="country">
-            <option value="">Choose...</option>
-            <option>United States</option>
-          </select>
-          <div class="invalid-feedback">Please select a valid country</div>
-        </div>
         <div class="col-md-4 mb-3">
           <label for="state">State</label>
           <select class="custom-select d-block w-100" id="state" required="" formControlName="state">
@@ -68,15 +59,23 @@
           </select>
           <div class="invalid-feedback">Please select a valid state</div>
         </div>
+          <div class="col-md-5 mb-3">
+            <label for="country">Country</label>
+            <select class="custom-select d-block w-100" id="country" required="" formControlName="country">
+              <option value="">Choose...</option>
+              <option>United States</option>
+            </select>
+            <div class="invalid-feedback">Please select a valid country</div>
+          </div>
         <div class="col-md-3 mb-3">
           <label for="zip">Zip</label>
           <input type="text" class="form-control" id="zip" placeholder="" required="" formControlName="zip">
           <div class="invalid-feedback">Zip code required</div>
         </div>
-      </div>
       <hr class="mb-4">
       <button class="btn btn-primary btn-large btn-block" [disabled]="!checkoutForm.valid" type='submit'>Place Order</button>
     </form>
+    <div id='snackbar'></div>
   </div>
   <ng-template #noItemInCart>
     <h2 class='text-center'>Your Cart is Empty</h2>
