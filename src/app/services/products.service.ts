@@ -1,5 +1,6 @@
 import { BehaviorSubject } from 'rxjs';
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -10,31 +11,17 @@ export class ProductsService {
   productsSub;
   cartSub;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.productsSub = new BehaviorSubject<any[]>(this.products);
     this.cartSub = new BehaviorSubject<any[]>(this.cart);
   }
 
   fetchProducts() {
-    const items = [
-      {
-        id:1,
-        name:'2021 polygon vander t7',
-        description: 'VANDER T bikes boast all-rounder trail geometry with moderate chainstay and wheelbase lengths combined with a relaxed head angle; these bikes feel agile in twisty trails while ensuring confidence at high speed.',
-        image: "https://www.bikesonline.com/assets/full/24680.jpg?20210317031457",
-        price: 1700,
-      },
-      {
-        id:2,
-        name:'Session 8 29 GX',
-        description: 'Session 8 is a downhill mountain bike with a robust alloy frame and high-pivot suspension design that keeps you nimble, planted, and blazing fast on even the most punishing runs.',
-        image: 'https://trek.scene7.com/is/image/TrekBicycleProducts/Session829GX_22_34624_A_Portrait?$responsive-pjpg$&cache=on,on&wid=1920&hei=1440',
-        price: 5000
-      }
-    ];
-      this.products = [...items];
+    this.http.get<any[]>('api/products').subscribe(data => {
+    this.products = [...data];
     this.productsSub.next([...this.products]);
 
+    })
    }
 
   getProducts() {
