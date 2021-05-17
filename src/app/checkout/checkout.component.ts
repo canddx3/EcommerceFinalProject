@@ -36,6 +36,7 @@ export class CheckoutComponent implements OnInit {
       ...this.checkoutForm.value,
       items: this.cart
     }
+    this.productsService.checkout(order)
     this.productsService.checkout(order).subscribe(res => {
       // snack bar isnt working
       // const snackbar = document.getElementById('snackbar');

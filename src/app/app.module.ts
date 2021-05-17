@@ -13,6 +13,7 @@ import { AppnavComponent } from './appnav/appnav.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { OrderComponent } from './order/order.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     AppnavComponent,
     CheckoutComponent,
     CartComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

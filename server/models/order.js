@@ -10,7 +10,8 @@ const OrderSchema = new Schema({
   state: String,
   country: String,
   zip: String,
-  items: [{ type: Schema.Types.ObjectId, ref: 'Product'}]
+  items: [{ type: Schema.Types.ObjectId, ref: 'Product'}],
+  date: {type: Date, default: Date.now()}
 });
 
 module.exports = mongoose.model('Order', OrderSchema);
