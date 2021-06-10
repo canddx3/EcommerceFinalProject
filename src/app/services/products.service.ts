@@ -68,7 +68,7 @@ export class ProductsService {
   }
 
   checkout(data: any) {
-    return this.http.post('/api/checkout', data)
+    return this.http.post('/api/checkout', data);
   }
 }
 

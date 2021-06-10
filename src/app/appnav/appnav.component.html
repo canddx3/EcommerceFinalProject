@@ -1,9 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">MeanStack</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="#">Mountain Bikes</a>
+  <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
-  </button>
-
+  </button> -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
@@ -25,12 +24,11 @@
         </div>
       </li>
     </ul>
-    <!-- cart icon not working -->
     <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
       <li class="nav-item" style="padding: 0 20px; font-size: 24px">
         <a class="nav-link navbar-link-2 waves-effect" routerLink="/cart" style="color: blue">
           <i class="fa fa-shopping-cart"></i>
-          <span class="badge badge-pill red" style="margin-left: 8px; color: red" *ngIf="cart.length">{{ cart.length }}</span>
+          <span class="badge badge-pill red" style="margin-left: 8px; color: blue" *ngIf="cart.length">{{ cart.length }}</span>
         </a>
       </li>
     </ul>

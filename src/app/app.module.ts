@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardModule } from "./dashboard/dashboard.module";
 // importing components
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
@@ -13,6 +14,9 @@ import { AppnavComponent } from './appnav/appnav.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CartComponent } from './cart/cart.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { OrderComponent } from './order/order.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -21,14 +25,19 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     AppnavComponent,
     CheckoutComponent,
     CartComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    OrderComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(APP_ROUTES),
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
