@@ -11,7 +11,8 @@ const Order        = require('./models/order');
 mongoose.Promise = global.Promise;
 mongoose.connect(
   config.mongoURL,
-  { useNewUrlParser: true}
+  { useNewUrlParser: true},
+  { useUnifiedTopology: true}
 );
 
 app.use(bodyParser.json());
@@ -62,7 +63,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
 });
 
-app.listen(3000, () => console.log('listening on port 3000...'));
+app.listen(4200, () => console.log('listening on port 4200...'));
 // adding data to database
 // app.get('/seeddb', (req, res) => {
 //   const data =
