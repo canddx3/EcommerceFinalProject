@@ -63,7 +63,7 @@ app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/index.html'))
 });
 
-app.listen(4200, () => console.log('listening on port 4200...'));
+app.listen(3000, () => console.log('listening on port 3000...'));
 // adding data to database
 // app.get('/seeddb', (req, res) => {
 //   const data =

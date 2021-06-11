@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DashboardModule } from "./dashboard/dashboard.module";
 // importing components
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from './app.routes';
@@ -17,6 +16,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { OrderComponent } from './order/order.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,8 @@ import { RegisterComponent } from './register/register.component';
     PagenotfoundComponent,
     OrderComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +38,6 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    DashboardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
