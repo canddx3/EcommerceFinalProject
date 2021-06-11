@@ -6,15 +6,17 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { OrderComponent } from './order/order.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 export const APP_ROUTES: Routes = [
-  { path: 'products', component:  ProductlistComponent},
-  { path: 'orders', component:  OrderComponent},
-  { path: 'cart', component:  CartComponent},
-  { path: 'checkout', component:  CheckoutComponent},
-  { path: 'login', component: LoginComponent},
-  { path: 'signup', component: RegisterComponent},
-  { path: '', redirectTo: 'products', pathMatch: 'full'},
-  { path: '**', component:  PagenotfoundComponent}
+  { path: 'products', component:  ProductlistComponent },
+  { path: 'orders', component:  OrderComponent },
+  { path: 'cart', component:  CartComponent },
+  { path: 'checkout', component:  CheckoutComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: RegisterComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: '', redirectTo: 'products', pathMatch: 'full' },
+  { path: '**', component:  PagenotfoundComponent }
 ];
 
