@@ -38,15 +38,9 @@ export class CheckoutComponent implements OnInit {
     }
     this.productsService.checkout(order)
     this.productsService.checkout(order).subscribe(res => {
-      // snack bar isnt working
-      // const snackbar = document.getElementById('snackbar');
-      // snackbar.innerHTML = 'Order placed successfully';
-      // snackbar.className = 'show';
-      // setTimeout(() => {
-        // snackbar.className = snackbar.className.replace('show', '')
-        this.productsService.clearFromCart();
-        this.router.navigate(['/products']);
-      // }, 3000);
+    this.productsService.orderMessage();
+    this.productsService.clearFromCart();
+    this.router.navigate(['/products']);
 
     });;
   }
