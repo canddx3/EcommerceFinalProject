@@ -71,9 +71,5 @@ export class ProductsService {
     return this.http.post('/api/checkout', data);
   }
 
-  orderMessage() {
-    const message = "your order is complete!";
-    return message;
-  }
 }
 

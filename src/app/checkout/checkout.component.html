@@ -73,7 +73,7 @@
           <div class="invalid-feedback">Zip code required</div>
         </div>
       <hr class="mb-4">
-      <button class="btn btn-primary btn-large btn-block" [disabled]="!checkoutForm.valid" type='submit'>Place Order</button>
+      <button class="btn btn-primary btn-large btn-block" (click)="orderMessage" [disabled]="!checkoutForm.valid" type='submit'>Place Order</button>
     </form>
   </div>
   <ng-template #noItemInCart>

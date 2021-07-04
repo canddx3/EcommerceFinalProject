@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./checkout.component.css']
 })
 export class CheckoutComponent implements OnInit {
+  message = "your order was successful!"
   noItemsInCart = [];
   cart : any[] = [];
   cartTotal = 0;
@@ -31,6 +32,10 @@ export class CheckoutComponent implements OnInit {
     })
   }
 
+  orderMessage() {
+    alert(this.message);
+  }
+
   doCheckout() {
     const order = {
       ...this.checkoutForm.value,
@@ -38,11 +43,9 @@ export class CheckoutComponent implements OnInit {
     }
     this.productsService.checkout(order)
     this.productsService.checkout(order).subscribe(res => {
-    this.productsService.orderMessage();
-    this.productsService.clearFromCart();
-    this.router.navigate(['/products']);
-
-    });;
+        this.productsService.clearFromCart();
+        this.router.navigate(['/products']);
+      // }, 3000);
+    });
   }
-
 }
